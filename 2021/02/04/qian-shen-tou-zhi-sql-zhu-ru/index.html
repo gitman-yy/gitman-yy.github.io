@@ -460,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    97
+                    391
                 </div>
                 
 
@@ -487,8 +487,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><u>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序员在开发用户和数据库交互的系统时没有对用户输入的字符串进行过滤，转义，限制或处理不严谨，导致用户可以通过输入精心构造的字符串去非法获取到数据库中的数据。</u></p>
-
+                <p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序员在开发用户和数据库交互的系统时没有对用户输入的字符串进行过滤，转义，限制或处理不严谨，导致用户可以通过输入精心构造的字符串去非法获取到数据库中的数据。</p>
+<p>SQL注入漏洞的产生必须满足两个条件：<br>参数是用户可控的，也就是前端传入后端的参数的内容是用户可以控制的。<br>参数被带入数据库进行查询，也就是传入的参数被拼接到SQL语句中，并且被带入到数据库进行查询。</p>
+<h2 id="·-SQL注入漏洞的危害"><a href="#·-SQL注入漏洞的危害" class="headerlink" title="· SQL注入漏洞的危害"></a>· SQL注入漏洞的危害</h2><p>​    <strong>· 获取webshell：</strong>当权限为root且知道绝对路径时，可以直接写一句话木马到服务器。</p>
+<p>​    <strong>· 获取系统权限：</strong>当权限足够高时，可以获取系统直接权限，即system权限。</p>
+<p>​    <strong>· 数据库信息泄露：</strong>泄露数据库中存放的数据，用户隐私等。</p>
+<p>​    <strong>· 网页篡改：</strong>注入出后台管理员用户，登陆后台后发布恶意数据、篡改后台数据等。</p>
+<p>​    <strong>· 网站挂马：</strong>当拿到WebShell或者获取到服务器的权限后，可将一些网页木马挂在服务器上，去攻击别人。</p>
+<p>​    <strong>· 万能密码：</strong>利用特定的Payload登录后台或者其他页面。</p>
+<p>​    <strong>· 文件读取：</strong>读取敏感文件。union select 1,2,hex(loadfile(‘D:\phpStudy\PHPTutorial\WWW\x.php’))–+</p>
+<h2 id="·-SQL注入类型"><a href="#·-SQL注入类型" class="headerlink" title="· SQL注入类型"></a>· SQL注入类型</h2>
                 
             </div>
             <hr/>
@@ -1018,7 +1026,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.7k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
