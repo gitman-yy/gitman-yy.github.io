@@ -460,14 +460,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    391
+                    583
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -487,8 +487,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>SQL注入是网站存在最多也是最简单的漏洞，主要原因是程序员在开发用户和数据库交互的系统时没有对用户输入的字符串进行过滤，转义，限制或处理不严谨，导致用户可以通过输入精心构造的字符串去非法获取到数据库中的数据。</p>
-<p>SQL注入漏洞的产生必须满足两个条件：<br>参数是用户可控的，也就是前端传入后端的参数的内容是用户可以控制的。<br>参数被带入数据库进行查询，也就是传入的参数被拼接到SQL语句中，并且被带入到数据库进行查询。</p>
+                <p>SQL全称是Structured Query  Language，是一种结构化的查询语言，用于与数据库进行交互并能够被数据库解析。SQL注入攻击是一种常见的注入攻击类型。攻击方式在用户与程序进行交互时发生的。如在表单输入、搜索框输入功能中插入SQL命令，然后发送到服务端。服务端对数据进行了解析执行，并执行了一些非预期的操作。</p>
 <h2 id="·-SQL注入漏洞的危害"><a href="#·-SQL注入漏洞的危害" class="headerlink" title="· SQL注入漏洞的危害"></a>· SQL注入漏洞的危害</h2><p>​    <strong>· 获取webshell：</strong>当权限为root且知道绝对路径时，可以直接写一句话木马到服务器。</p>
 <p>​    <strong>· 获取系统权限：</strong>当权限足够高时，可以获取系统直接权限，即system权限。</p>
 <p>​    <strong>· 数据库信息泄露：</strong>泄露数据库中存放的数据，用户隐私等。</p>
@@ -496,7 +495,27 @@
 <p>​    <strong>· 网站挂马：</strong>当拿到WebShell或者获取到服务器的权限后，可将一些网页木马挂在服务器上，去攻击别人。</p>
 <p>​    <strong>· 万能密码：</strong>利用特定的Payload登录后台或者其他页面。</p>
 <p>​    <strong>· 文件读取：</strong>读取敏感文件。union select 1,2,hex(loadfile(‘D:\phpStudy\PHPTutorial\WWW\x.php’))–+</p>
-<h2 id="·-SQL注入类型"><a href="#·-SQL注入类型" class="headerlink" title="· SQL注入类型"></a>· SQL注入类型</h2>
+<p>​    <!--SQL注入漏洞被列为高危漏洞，常居十大漏洞榜首--></p>
+<h2 id="·-SQL注入条件"><a href="#·-SQL注入条件" class="headerlink" title="· SQL注入条件"></a>· SQL注入条件</h2><p>​    SQL注入漏洞的产生必须满足两个条件：</p>
+<p>​    <strong>存在注入位置：</strong>参数被拼接到SQL语句中并被带入到数据库进行查询。</p>
+<p>​    <strong>参数的可控性：</strong>前端传入后端的参数内容是用户可以控制的。</p>
+<h2 id="·-SQL注入类型"><a href="#·-SQL注入类型" class="headerlink" title="· SQL注入类型"></a>· SQL注入类型</h2><p>​    <strong>· 参数类型分类：</strong></p>
+<p>​        数字型注入：输入参数为整型时，例如id = 1 ，age = 1 等；</p>
+<p>​        字符型注入：输入参数为字符串型时，如name = ‘admin’、password = ‘qq456’ 等；</p>
+<p>​        <!--两者最大的区别：字符型注入一般要使用单引号进行闭合，而数字型注入则不需要--></p>
+<p>​    <strong>· 注入位置分类：</strong></p>
+<p>​        GET注入：注入字符在URL参数中；</p>
+<p>​        POST注入：注入字段在POST提交的数据中；</p>
+<p>​        Cookie注入：注入字段在Cookie数据中;</p>
+<p>​        Referer注入：注入字段在Referer数据中;</p>
+<p>​        其他注入：HTTP请求的其他内容触发的SQL注入漏洞；</p>
+<p>​        <!--网站使用通用的防注入程序，会对GET、POST提交的数据进行过滤，却往往遗漏Cookie与Referer中的数据进行过滤--></p>
+<p>​    <strong>· 结果反馈分类：</strong></p>
+<p>​        盲注：盲注不会展现任何报错内容，它是依据构造真或假的问题对数据库进行“提问”，注入方式主要有两种：</p>
+<p>​        布尔盲注：</p>
+<p>​        时间盲注：</p>
+<p>​        <!--盲注提交SQL命令较多，通常通过手工方式无法完成，借用工具如SQLMAP--></p>
+
                 
             </div>
             <hr/>
@@ -1026,7 +1045,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3k</span>&nbsp;字
+                class="white-color">3.2k</span>&nbsp;字
             
             
             
