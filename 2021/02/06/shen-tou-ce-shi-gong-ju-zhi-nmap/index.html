@@ -464,14 +464,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    619
+                    863
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -494,34 +494,55 @@
                 <p>Nmap即Network Mapper，网络映射器，最早是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux/27050">Linux</a>下的网络扫描和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%97%85%E6%8E%A2/5114370">嗅探</a>工具包。正如大多数被用于网络安全的工具，nmap 也是不少黑客及骇客（又称脚本小子）爱用的工具 。系统管理员可以利用nmap来探测工作环境中未经批准使用的服务器，但是黑客会利用nmap来搜集目标电脑的网络设定，从而计划攻击的方法。</p>
 <h2 id="·-Nmap的功能介绍"><a href="#·-Nmap的功能介绍" class="headerlink" title="· Nmap的功能介绍"></a>· Nmap的功能介绍</h2><p>​    <strong>·    主机发现</strong> - 识别网络上的主机。例如，列出响应TCP和/或ICMP请求或打开特定端口的主机。</p>
 <p>​    <strong>·    端口扫描</strong> - 枚举目标主机上的开放端口。</p>
-<p>​    <strong>·    服务版本侦测</strong> - 询问远程设备上的网络服务以确定应用程序名称和版本号。</p>
-<p>​    <strong>·    操作系统侦测</strong> - 确定网络设备的操作系统和硬件特性。</p>
+<p>​    <strong>·    服务版本探测</strong> - 询问远程设备上的网络服务以确定应用程序名称和版本号。</p>
+<p>​    <strong>·    操作系统检测</strong> - 确定网络设备的操作系统和硬件特性。</p>
 <p>​    <strong>·    脚本引擎应用</strong> - 使用Nmap脚本引擎（NSE）和Lua编程语言。</p>
 <h2 id="·-Nmap的参数介绍"><a href="#·-Nmap的参数介绍" class="headerlink" title="· Nmap的参数介绍"></a>· Nmap的参数介绍</h2><p>​    <strong>·    主机发现：</strong></p>
 <p>​            <strong>-sL</strong>    列表扫描，仅列出指定网络上的每台主机，不发送任何<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8A%A5%E6%96%87">报文</a>到目标主机，个人感觉比较鸡肋：</p>
-<p>​            <code>nmap -sL 192.168.1.0/24</code>    </p>
+<p>​            example：<code>nmap -sL 192.168.1.0/24</code>    </p>
 <p>​            <strong>-sn</strong>    Ping扫描，侦测存活的主机，而不进行端口扫描，是目前十几种主机发现手段中最常用的：</p>
-<p>​            <code>nmap -sn 192.168.1.0/24</code></p>
+<p>​            example：<code>nmap -sn 192.168.1.0/24</code></p>
 <p>​            <strong>-sP</strong>    Ping扫描，侦测存活的主机，而不进行端口扫描，与-sn相同，只是版本不同，执行效果一样：</p>
-<p>​            <code>nmap -sP 192.168.1.0/24</code>    </p>
+<p>​            example：<code>nmap -sP 192.168.1.0/24</code>    </p>
 <p>​            <strong>-Pn</strong>    非Ping扫描，不执行Ping主机，常用于绕过防火墙：</p>
-<p>​            <code>    nmap -Pn 192.168.1.0/24</code></p>
+<p>​            example：<code>    nmap -Pn 192.168.1.0/24</code></p>
 <p>​            <strong>-P0</strong>    非Ping扫描，不执行Ping主机，与-Pn类似，应该也是版本不同，执行效果一样：</p>
-<p>​            <code>    nmap -P0 192.168.1.0/24</code></p>
-<p>​            <strong>-PS</strong></p>
-<p>​    </p>
+<p>​            example：<code>    nmap -P0 192.168.1.0/24</code></p>
 <p>​    <strong>·    端口扫描：</strong></p>
-<p>​            <strong>-sS</strong>    使用频率最高的扫描选项：SYN扫描,又称为半开放扫描，它不打开一个完全的TCP连接，执行得很快：</p>
-<p>​            <code>nmap -sS 192.168.1.0/24</code></p>
-<p>​    当SYN扫描不能用时，TCP连接扫描:完整三次握手，最基础最稳定的扫描方式，执行有点慢：</p>
-<p>​    <code>nmap -sT 192.168.1.0/24</code></p>
-<p>​    UDP扫描发送空的(没有数据)UDP报头到每个目标端口，扫描速度非常慢:</p>
-<p>​    <code>    nmap -sU 192.168.1.0/24</code></p>
-<p>​    非ping扫描，不执行主机发现，可以绕过防火墙（常用）：</p>
+<p>​            <strong>-sS</strong>    TCP SYN扫描，又称为半开放扫描，它不打开一个完全的TCP连接，执行得很快，是使用频率最高的扫描选项；</p>
+<p>​            example：<code>nmap -sS 192.168.1.1</code></p>
+<p>​            <strong>-sT</strong>    TCP connect()扫描，完整三次握手，最基础最稳定的扫描方式，执行有点慢，当SYN扫描不能用时用该选项;</p>
+<p>​            example：<code>nmap -sT 192.168.1.1</code></p>
+<p>​            <strong>-sU</strong>   UDP扫描，发送空的(没有数据)UDP报头到每个目标端口，扫描速度非常慢:</p>
+<p>​            example：<code>        nmap -sU 192.168.1.1</code></p>
+<p>​            <strong>-sA</strong>    TCP ACK扫描</p>
+<p>​            example：<code>        nmap -sU 192.168.1.1</code></p>
+<p>​            <strong>-sF</strong>     TCP FIN扫描</p>
+<p>​            example：<code>        nmap -sU 192.168.1.1</code></p>
+<p>​            <strong>-sN</strong>    TCP Null扫描</p>
+<p>​            example：<code>        nmap -sU 192.168.1.1</code></p>
+<p>​            <strong>-sW</strong>    窗口扫描    </p>
+<p>​            <strong>-p</strong>      指定端口扫描，扫描指定的端口信息，也可以扫描范围；</p>
+<p>​            example：<code>        nmap -p 80,81,3306,3389 192.168.1.1</code></p>
+<p>​            example：<code>        nmap -p 0-100 192.168.1.1</code>    </p>
+<p>​    <strong>·    服务版本探测</strong></p>
+<p>​            <strong>-sV</strong>    服务版本探测，配合端口扫描使用；</p>
+<p>​            example：<code>        nmap -sV -p 0-100 192.168.1.1</code></p>
+<p>​    <strong>·    操作系统检测</strong></p>
+<p>​            <strong>-O</strong>     操作系统检扫描，配合端口扫描使用；</p>
+<p>​            example：<code>        nmap -sS -O 192.168.1.1</code></p>
+<p>​    <strong>·    脚本引擎应用</strong></p>
+<p>​            <strong>–script=<lua scripts></lua></strong></p>
+<p>​            –script=auth    绕过鉴权扫描</p>
+<p>​            –script=vuln     常见漏洞扫描</p>
+<p>​    <strong>·    其他常用选项</strong>    </p>
+<p>​        -V       打印版本信息，也可以用长选项–version；</p>
+<p>​        -A       激烈扫描模式，目前是会同时开启服务版本探测-sV和操作系统检测-O；</p>
+<p>​        -h       打印大部分帮助信息，也可以用长选项–help；</p>
+<p>​        -v       提高输出信息的详细程度，也可以-vv，官方给出解释是会输出更详细；</p>
+<p>​        -e       指定网卡发送请求</p>
+<p>​     </p>
 <p>​    </p>
-<p>​    </p>
-<p>​    确定目标机支持哪些IP协议 (TCP，ICMP，IGMP等):</p>
-<p>​    <code>nmap -sO 192.168.1.19</code></p>
 <p>​    </p>
 
                 
@@ -831,9 +852,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="渗透测试之SQL注入">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="渗透测试漏洞之SQL注入">
                         
-                        <span class="card-title">渗透测试之SQL注入</span>
+                        <span class="card-title">渗透测试漏洞之SQL注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1065,7 +1086,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">4.5k</span>&nbsp;字
             
             
             
