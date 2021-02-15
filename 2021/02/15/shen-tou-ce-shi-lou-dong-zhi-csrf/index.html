@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="渗透测试之信息收集, DarkCrow">
+    <meta name="keywords" content="渗透测试漏洞之CSRF, DarkCrow">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>渗透测试之信息收集 | DarkCrow</title>
+    <title>渗透测试漏洞之CSRF | DarkCrow</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">渗透测试之信息收集</h1>
+                    <h1 class="description center-align post-title">渗透测试漏洞之CSRF</h1>
                 </div>
             </div>
         </div>
@@ -429,13 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                                <span class="chip bg-color">前渗透</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-04
+                    2021-02-15
                 </div>
                 
 
@@ -456,14 +452,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    1 分
                 </div>
                 
 
@@ -483,31 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在渗透测试过程中，最重要的就是信息收集，信息收集的越全面，找到漏洞的可能性就越大；一般的渗透测试都是通过一个主域名展开的,拿到主域名后可以从两个方向收集信息:<br>资产探测:      以点到面，横向收集信息，扩充范围以便于在一个点无法突破时再找其他突破点；<br>信息收集:      以点深入，纵向挖掘信息，深入挖掘一个点的所有详细信息以便从中找出漏洞点；</p>
-<h4 id="资产探测"><a href="#资产探测" class="headerlink" title="资产探测"></a>资产探测</h4><h5 id="IP"><a href="#IP" class="headerlink" title="IP:"></a>IP:</h5><p>​    拿到主域名首先用ping或者nslookup来查看域名对应的IP地址</p>
-<h5 id="子域名"><a href="#子域名" class="headerlink" title="子域名:"></a>子域名:</h5><p>​    子域名检测工具： layer子域名挖掘机<br>​                    onforall 米斯特团队研发，python3环境<br>​    搜索引擎枚举法： GHDB–&gt;site:domianName.com<br>​    第三方爆破接口： 在线查询子域名(具体网址下方总结)<br>​    SSL证书日记枚举：在线SSL证书查询(具体网址下方总结)</p>
-<h5 id="相关域名："><a href="#相关域名：" class="headerlink" title="相关域名："></a>相关域名：</h5><p>​    旁站：同一服务器上的其他站点<br>​    C段：同一局域网内的其他服务器   192.168.4.1/24<br>​    工具：网络空间搜索引擎：FOFA/Shodan/钟馗之眼zoomeye<br>​         Chrome插件:FOFA pro view            </p>
-<h5 id="网站架构："><a href="#网站架构：" class="headerlink" title="网站架构："></a>网站架构：</h5><p>​    网站语言、数据库，网站框架、组件框架历史漏洞<br>​    常见的网站架构如：<br>​        LAMP–&gt;Linux+Apache+Mysql+PHP<br>​        LNMP–&gt;Linux+Nginx+Mysql+PHP<br>​    工具：火狐插件:wappalyzer </p>
-<h5 id="设备型号："><a href="#设备型号：" class="headerlink" title="设备型号："></a>设备型号：</h5><p>​    192.168.1.1 网关，路由设备信息   </p>
-<h5 id="网络拓扑："><a href="#网络拓扑：" class="headerlink" title="网络拓扑："></a>网络拓扑：</h5><p>​    内网渗透以及内网信息收集</p>
-<h5 id="移动端："><a href="#移动端：" class="headerlink" title="移动端："></a>移动端：</h5><p>​    APP/公众号/小程序</p>
-<h5 id="行业系统"><a href="#行业系统" class="headerlink" title="行业系统:"></a>行业系统:</h5><p>​    同行业可能存在类似的系统，甚至于采用同一家厂商的系统，可互做对比，也可能存在通用弱口令；<br>​    通用：办公OA、邮件系统、VPN等<br>​    医院：门户、预约系统、掌上医院、微信公众平台等</p>
-<h4 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h4><h5 id="域名信息收集："><a href="#域名信息收集：" class="headerlink" title="域名信息收集："></a>域名信息收集：</h5><p>​            Whois信息：注册人(注册商)的信息，包括姓名，邮箱，电话，地址等信息；<br>​            查询方法：站长之家/微步社区/爱站<br>​            备案信息：域名是否备案(即合法)；<br>​            查询方法：IPC备案查询网/天眼查/企查查</p>
-<h5 id="IP信息收集："><a href="#IP信息收集：" class="headerlink" title="IP信息收集："></a>IP信息收集：</h5><p>​            主要针对做CDN加速服务的企业，需要绕过CDN查找到真实IP地址；<br>​            CDN：内容分发网络，也可以叫代理服务器；<br>​            判断方法：<br>​                    1.多地Ping查看IP是否一致；<br>​                    2.直接访问域名所解析的IP，查看是否能跳转到域名所在的页面；<br>​            绕过方法：<br>​                    1.多地Ping: 目标站点可能只针对某些地区做了CDN，找出现次数最多的IP；<br>​                    2.扫描测试文件：使用工具扫描测试文件、探针文件，如phpinfo、test文件，从而获取真实IP；<br>​                    3.通过子域名或移动APP获取:主站流量大做了CDN，而分站，APP可能不会做CDN，可以尝试；<br>​                    4.利用已知漏洞: XSS盲打，SSRF或命令执行也可能暴露出真实IP；<br>​                    5.网站邮箱订阅查找：目标自己的邮箱服务器一般都在内部系统中，不会做CDN加速；<br>​                    6.访问国外站点：可能目标网站只针对国内做了CDN加速；<br>​                    7.DNS历史解析：查看 IP 与 域名绑定的历史记录，可能会存在使用 CDN 前的记录；<br>​                    8.利用网络空间搜索引擎：FOFA/Shodan/钟馗之眼zoomeye<br>​                    9.SSL证书探测    </p>
-<h5 id="端口信息收集："><a href="#端口信息收集：" class="headerlink" title="端口信息收集："></a>端口信息收集：</h5><p>​            通过端口去判断目标系统开放了哪些的服务，然后我们在根据相关的服务去进行进一步的渗透测试；<br>​            端口扫描工具:nmap/Zenmap/Mascan</p>
-<h5 id="敏感文件-目录收集："><a href="#敏感文件-目录收集：" class="headerlink" title="敏感文件/目录收集："></a>敏感文件/目录收集：</h5><p>​            robots.txt文件是一个防爬虫文件，一般后台是不允许被爬取的，所以该文件可能存放着后台信息；<br>​            phpinfo()信息，phpinfo.php、l.php是一个探针信息文件，访问该文件可获取服务器配置等信息<br>​            备份文件:.rar/.zip/.tar.gz等，管理员在对网站进行修改、升级等操作前，可能会将网站或某些页面进行备份；<br>​            WEB-INF是Java的WEB应用的安全目录。如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问。<br>​            WEB-INF主要包含一下文件或目录：<br>​            /WEB-INF/web.xml：Web应用程序配置文件，描述了 servlet 和其他的应用组件配置及命名规则。<br>​            /WEB-INF/classes/：含了站点所有用的 class 文件，包括 servlet class 和非servlet class，他们不能包含在 .jar文件中<br>​            /WEB-INF/lib/：存放web应用需要的各种JAR文件，放置仅在这个应用中要求使用的jar文件,如数据库驱动jar文件<br>​            /WEB-INF/src/：源码目录，按照包名结构放置各个java文件。<br>​            目录扫描工具：dirb kali/御剑 windows         </p>
-<h5 id="CMS-指纹-密码信息收集："><a href="#CMS-指纹-密码信息收集：" class="headerlink" title="CMS/指纹/密码信息收集："></a>CMS/指纹/密码信息收集：</h5><p>​            robots.txt文件(防爬虫文件)里的目录结构,例如 /wp-admin/ 可以大致判断cms为WordPress<br>​            云悉指纹(具体网址下方总结)<br>​            潮汐指纹(具体网址下方总结)</p>
-<h5 id="服务器-中间件-网站架构信息收集："><a href="#服务器-中间件-网站架构信息收集：" class="headerlink" title="服务器/中间件/网站架构信息收集："></a>服务器/中间件/网站架构信息收集：</h5><p>​            服务器系统信息：<br>​                        最直接的办法是利用Linux系统对大小写敏感，而Windows不敏感<br>​                        数据包返回判断<br>​            中间件判断：<br>​                        报错法(想办法让网站报错)<br>​                        burp抓包<br>​                        火狐插件: wappalyzer<br>​            网站架构信息：<br>​                        常见的网站架构LAMP/LNMP<br>​                        PHP框架：ThinkPHP</p>
-<h6 id="在线资产收集："><a href="#在线资产收集：" class="headerlink" title="在线资产收集："></a>在线资产收集：</h6><blockquote>
-<p>​        IPC备案查询网：<br>​                    <a target="_blank" rel="noopener" href="http://www.beianbeian.com/">http://www.beianbeian.com</a><br>​                    <a target="_blank" rel="noopener" href="http://www.tianyancha.com/">http://www.tianyancha.com</a>                   #天眼查<br>​                    <a target="_blank" rel="noopener" href="http://icp.chinaz.com/">http://icp.chinaz.com/</a>                        #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://icp.aizhan.com/">https://icp.aizhan.com/</a>                     #爱站<br>​        Whois信息查询：<br>​                    <a target="_blank" rel="noopener" href="http://tool.chinaz.com/ipwhois">http://tool.chinaz.com/ipwhois</a>                 #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://whois.aizhan.com/">https://whois.aizhan.com/</a>                    #爱站<br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                    #微步情报社区<br>​        子域名查询：<br>​                    <a target="_blank" rel="noopener" href="https://phpinfo.me/domain/">https://phpinfo.me/domain/</a>                  #推荐好用<br>​                    <a target="_blank" rel="noopener" href="http://tool.chinaz.com/subdomain/">http://tool.chinaz.com/subdomain/</a>           #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://dnsdumpster.com/">https://dnsdumpster.com/</a><br>​                    <a target="_blank" rel="noopener" href="http://searchdns.netcraft.com/">http://searchdns.netcraft.com/</a><br>​                    <a target="_blank" rel="noopener" href="https://www.virustotal.com/gui/home/search">https://www.virustotal.com/gui/home/search</a><br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                    #微步情报社区<br>​        在线c段查询：<br>​                    <a target="_blank" rel="noopener" href="https://phpinfo.me/bing.php">https://phpinfo.me/bing.php</a><br>​        同IP站点查询：<br>​                    <a target="_blank" rel="noopener" href="https://www.webscan.cc/search/">https://www.webscan.cc/search/</a><br>​        多地Ping：<br>​                    <a target="_blank" rel="noopener" href="http://www.17ce.com/">http://www.17ce.com</a><br>​                    <a target="_blank" rel="noopener" href="http://ping.chinaz.com/">http://ping.chinaz.com</a>                         #站长之家<br>​                    <a target="_blank" rel="noopener" href="https://ping.aizhan.com/">https://ping.aizhan.com</a>                         #爱站<br>​        DNS解析查询：<br>​                    <a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn/">https://dnsdb.io/zh-cn/</a>                      #全球DNS搜索引擎<br>​                    <a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a>                     #微步情报社区<br>​                    <a target="_blank" rel="noopener" href="https://searchdns.netcraft.com/">https://searchdns.netcraft.com/</a><br>​                    <a target="_blank" rel="noopener" href="http://viewdns.info/">http://viewdns.info/</a><br>​                    <a target="_blank" rel="noopener" href="https://securitytrails.com/">https://securitytrails.com/</a><br>​        资产在线查询：<br>​                    <a target="_blank" rel="noopener" href="https://www.zoomeye.org/">https://www.zoomeye.org/</a>                       #钟馗之眼<br>​                    <a target="_blank" rel="noopener" href="https://fofa.so/">https://fofa.so/</a>                               #佛法<br>​                    <a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a>                         #撒旦<br>​        开源指纹查询：<br>​                    <a target="_blank" rel="noopener" href="http://www.yunsee.cn/">http://www.yunsee.cn/</a>                          #云悉指纹<br>​                    <a target="_blank" rel="noopener" href="http://finger.tidesec.net/">http://finger.tidesec.net/</a>                      #潮汐指纹<br>​        SSL在线查询：<br>​                    <a target="_blank" rel="noopener" href="https://censys.io/">https://censys.io</a><br>​                    <a target="_blank" rel="noopener" href="https://certdb.com/domain/github.com">https://certdb.com/domain/github.com</a><br>​                    <a target="_blank" rel="noopener" href="https://crt.sh/?Identity=%25%25.github.com">https://crt.sh/?Identity=%%.github.com</a><br>​                    <a target="_blank" rel="noopener" href="https://censys.io/certificates">https://censys.io/certificates</a></p>
-</blockquote>
-<p>​                        </p>
-<p>​            </p>
-<p>​               </p>
-<p>​            </p>
-<p>​                    </p>
-<p>​<br>​<br>​    </p>
-
+                
                 
             </div>
             <hr/>
@@ -533,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-zhi-xin-xi-shou-ji/">https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-zhi-xin-xi-shou-ji/</a>
+                    <a href="https://gitman-yy.github.io/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-csrf/">https://gitman-yy.github.io/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-csrf/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,11 +542,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                                    <span class="chip bg-color">前渗透</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -748,13 +716,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/04/shen-tou-ce-shi-zhi-sql-zhu-ru/">
+                <a href="/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-ssrf/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="渗透测试漏洞之SQL注入">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="渗透测试漏洞之SSRF">
                         
-                        <span class="card-title">渗透测试漏洞之SQL注入</span>
+                        <span class="card-title">渗透测试漏洞之SSRF</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -765,7 +733,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-15
                         </span>
                         <span class="publish-author">
                             
@@ -774,18 +742,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">渗透测试</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%BC%8F%E6%B4%9E/">
-                        <span class="chip bg-color">漏洞</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -797,13 +753,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/04/nei-wang-shen-tou-zhi-liu-liang-zhuan-fa/">
+                <a href="/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-xss/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="内网渗透之流量转发">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="渗透测试·漏洞之XSS">
                         
-                        <span class="card-title">内网渗透之流量转发</span>
+                        <span class="card-title">渗透测试·漏洞之XSS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -814,7 +770,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-15
                             </span>
                         <span class="publish-author">
                             
@@ -823,18 +779,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">
-                        <span class="chip bg-color">内网渗透</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
-                        <span class="chip bg-color">流量转发</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1035,7 +979,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">4.6k</span>&nbsp;字
             
             
             

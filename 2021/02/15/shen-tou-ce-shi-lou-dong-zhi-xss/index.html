@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="渗透测试漏洞之SQL注入, DarkCrow">
+    <meta name="keywords" content="渗透测试·漏洞之XSS, DarkCrow">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>渗透测试漏洞之SQL注入 | DarkCrow</title>
+    <title>渗透测试·漏洞之XSS | DarkCrow</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">渗透测试漏洞之SQL注入</h1>
+                    <h1 class="description center-align post-title">渗透测试·漏洞之XSS</h1>
                 </div>
             </div>
         </div>
@@ -429,17 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">渗透测试</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%BC%8F%E6%B4%9E/">
-                                <span class="chip bg-color">漏洞</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -451,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-04
+                    2021-02-15
                 </div>
                 
 
@@ -460,14 +452,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    0
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -487,56 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>SQL全称是Structured Query  Language，是一种结构化的查询语言，用于与数据库进行交互并能够被数据库解析。SQL注入攻击是一种常见的注入攻击类型。攻击方式在用户与程序进行交互时发生的。如在表单输入、搜索框输入功能中插入SQL命令，然后发送到服务端。服务端对数据进行了解析执行，并执行了一些非预期的操作。</p>
-<h2 id="·-SQL注入漏洞的危害"><a href="#·-SQL注入漏洞的危害" class="headerlink" title="· SQL注入漏洞的危害"></a>· SQL注入漏洞的危害</h2><p>​    <strong>· 获取webshell：</strong>当权限为root且知道绝对路径时，可以直接写一句话木马到服务器。</p>
-<p>​    <strong>· 获取系统权限：</strong>当权限足够高时，可以获取系统直接权限，即system权限。</p>
-<p>​    <strong>· 数据库信息泄露：</strong>泄露数据库中存放的数据，用户隐私等。</p>
-<p>​    <strong>· 网页篡改：</strong>注入出后台管理员用户，登陆后台后发布恶意数据、篡改后台数据等。</p>
-<p>​    <strong>· 网站挂马：</strong>当拿到WebShell或者获取到服务器的权限后，可将一些网页木马挂在服务器上，去攻击别人。</p>
-<p>​    <strong>· 万能密码：</strong>利用特定的Payload登录后台或者其他页面。</p>
-<p>​    <strong>· 文件读取：</strong>读取敏感文件。union select 1,2,hex(loadfile(‘D:\phpStudy\PHPTutorial\WWW\x.php’))–+</p>
-<p>​    <!--SQL注入漏洞被列为高危漏洞，常居十大漏洞榜首--></p>
-<h2 id="·-SQL注入条件"><a href="#·-SQL注入条件" class="headerlink" title="· SQL注入条件"></a>· SQL注入条件</h2><p>​    SQL注入漏洞的产生必须满足两个条件：</p>
-<p>​    <strong>存在注入位置：</strong>参数被拼接到SQL语句中并被带入到数据库进行查询。</p>
-<p>​    <strong>参数的可控性：</strong>前端传入后端的参数内容是用户可以控制的。</p>
-<h2 id="·-SQL注入类型"><a href="#·-SQL注入类型" class="headerlink" title="· SQL注入类型"></a>· SQL注入类型</h2><p>​    <strong>· 参数类型分类：</strong></p>
-<p>​        数字型注入：输入参数为整型时，例如id = 1 ，age = 1 等；</p>
-<p>​        字符型注入：输入参数为字符串型时，如name = ‘admin’、password = ‘qq456’ 等；</p>
-<p>​    <strong>· 注入位置分类：</strong></p>
-<p>​        GET注入：注入字符在URL参数中；</p>
-<p>​        POST注入：注入字段在POST提交的数据中；</p>
-<p>​        Cookie注入：注入字段在Cookie数据中;</p>
-<p>​        Referer注入：注入字段在Referer数据中;</p>
-<p>​        搜索注入：注入点在搜索框中，</p>
-<p>​                            可能是GET注入一般用在网站的搜索框，</p>
-<p>​                            也可能是POST注入一般用在用户名的登录框；</p>
-<p>​        其他注入：HTTP请求的其他内容触发的SQL注入漏洞；</p>
-<p>​        <!--网站使用通用的防注入程序，会对GET、POST提交的数据进行过滤，却往往遗漏Cookie与Referer中的数据进行过滤--></p>
-<p>​    <strong>· 结果反馈分类：</strong></p>
-<p>​        盲注：盲注不会展现任何报错内容，它是依据构造真或假的问题对数据库进行“提问”，注入方式主要有两种：</p>
-<p>​            布尔盲注：基于布尔值判断代入的SQL语句是否执行；</p>
-<p>​            时间盲注：基于延时函数是否执行从而判断代入的SQL语句是否执行；</p>
-<p>​        <!--盲注提交SQL命令较多，通常通过手工方式无法完成，借用工具如SQLMAP--></p>
-<p>​        非盲注：执行注入SQL语句将敏感信息展示出来，并进行进一步的操作。</p>
-<p>​            联合查询注入：使用union操作码合并两条或多条SQL语句；</p>
-<p>​            堆叠查询注入：同时执行多条语句；</p>
-<p>​            编码注入：将输入的字符串进行编码，如base64编码；</p>
-<p>​            多阶注入：由多个HTTP请求响应共同完成的注入；    </p>
-<h2 id="·-SQL注入手段"><a href="#·-SQL注入手段" class="headerlink" title="· SQL注入手段"></a>· SQL注入手段</h2><p>​    <strong>现在主流的网站架构有两种：</strong></p>
-<p>​    LAMP —-&gt;  Linux + Apach+ Mysql + Php</p>
-<p>​    LNMP —-&gt; Linux + Ngnix + Mysql + Php</p>
-<p>​    所以主要的注入方向还是Mysql数据库，当然也有用Mssql，DB2，Access等数据库的网站，由于比较小众，所以就从Mysql数据库的注入入手；</p>
-<p>​    <strong>Mysql数据库5.5.53内置四个库：</strong></p>
-<p>​    <strong>infomation_schema：</strong>主要负责管理访问数据库元数据的方式；</p>
-<p>​    <strong>performance_schema：</strong>主要用于收集数据库服务器性能参数；</p>
-<p>​    <strong>mysql：</strong>主要负责存储数据库的用户、权限设置、关键字等；</p>
-<p>​    <strong>test：</strong>示例库，没有任何数据；</p>
-<p>​    <strong>SQL注入主要要借助于infomation_schema库，infomation_schema库中有三个表最为关键：</strong></p>
-<p>​    <strong>schemata表</strong>：SCHEMA_NAME字段中存放着Mysql中的所有库名；</p>
-<p>​    <strong>tables表：</strong>TABLE_NAME和TABLE_SCHEMA分别存放着MySQL中的所有表名和对应的库名。</p>
-<p>​    <strong>columns表：</strong>COLUMN_NAME，TABLE_NAME和TABLE_SCHEMA分别存放着Mysql中的所有字段名和对应的表名，库名</p>
-<p>​    </p>
-
+                
                 
             </div>
             <hr/>
@@ -562,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-zhi-sql-zhu-ru/">https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-zhi-sql-zhu-ru/</a>
+                    <a href="https://gitman-yy.github.io/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-xss/">https://gitman-yy.github.io/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-xss/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,15 +542,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">渗透测试</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%BC%8F%E6%B4%9E/">
-                                    <span class="chip bg-color">漏洞</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -781,6 +716,43 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-csrf/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="渗透测试漏洞之CSRF">
+                        
+                        <span class="card-title">渗透测试漏洞之CSRF</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            DarkCrow
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/02/06/shen-tou-ce-shi-gong-ju-zhi-nmap/">
                     <div class="card-image">
                         
@@ -797,9 +769,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -821,51 +793,6 @@
                     
                     <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
                         <span class="chip bg-color">网络安全</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/04/shen-tou-ce-shi-zhi-xin-xi-shou-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="渗透测试之信息收集">
-                        
-                        <span class="card-title">渗透测试之信息收集</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            DarkCrow
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                        <span class="chip bg-color">前渗透</span>
                     </a>
                     
                 </div>
@@ -1068,7 +995,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">4.6k</span>&nbsp;字
             
             
             

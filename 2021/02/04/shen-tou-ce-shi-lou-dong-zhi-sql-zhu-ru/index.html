@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="渗透测试工具之Nmap, DarkCrow">
+    <meta name="keywords" content="渗透测试·漏洞之SQL注入, DarkCrow">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>渗透测试工具之Nmap | DarkCrow</title>
+    <title>渗透测试·漏洞之SQL注入 | DarkCrow</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">渗透测试工具之Nmap</h1>
+                    <h1 class="description center-align post-title">渗透测试·漏洞之SQL注入</h1>
                 </div>
             </div>
         </div>
@@ -431,16 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">工具</span>
+                            <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">渗透测试</span>
                             </a>
                         
-                            <a href="/tags/Nmap/">
-                                <span class="chip bg-color">Nmap</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                                <span class="chip bg-color">网络安全</span>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E/">
+                                <span class="chip bg-color">漏洞</span>
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-06
+                    2021-02-04
                 </div>
                 
 
@@ -464,7 +460,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    930
+                    1k
                 </div>
                 
 
@@ -491,60 +487,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Nmap即Network Mapper，网络映射器，最早是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux/27050">Linux</a>下的网络扫描和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%97%85%E6%8E%A2/5114370">嗅探</a>工具包。图形化界面是Zenmap，分布式框架为Dnamp。正如大多数被用于网络安全的工具，nmap 也是不少黑客及骇客（又称脚本小子）爱用的工具 。系统管理员可以利用nmap来探测工作环境中未经批准使用的服务器，但是黑客会利用nmap来搜集目标电脑的网络设定，从而计划攻击的方法。</p>
-<h2 id="·-Nmap的功能介绍"><a href="#·-Nmap的功能介绍" class="headerlink" title="· Nmap的功能介绍"></a>· Nmap的功能介绍</h2><p>​    <strong>·    主机发现</strong> - 识别网络上的主机。例如，列出响应TCP和/或ICMP请求或打开特定端口的主机。</p>
-<p>​    <strong>·    端口扫描</strong> - 枚举目标主机上的开放端口。</p>
-<p>​    <strong>·    服务版本探测</strong> - 询问远程设备上的网络服务以确定应用程序名称和版本号。</p>
-<p>​    <strong>·    操作系统检测</strong> - 确定网络设备的操作系统和硬件特性。</p>
-<p>​    <strong>·    脚本引擎应用</strong> - 使用Nmap脚本引擎（NSE）和Lua编程语言。</p>
-<h2 id="·-Nmap的参数介绍"><a href="#·-Nmap的参数介绍" class="headerlink" title="· Nmap的参数介绍"></a>· Nmap的参数介绍</h2><p>​    <strong>·    主机发现：</strong></p>
-<p>​            <strong>-sL</strong>    列表扫描，仅列出指定网络上的每台主机，不发送任何<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8A%A5%E6%96%87">报文</a>到目标主机，个人感觉比较鸡肋：</p>
-<p>​            example：<code>nmap -sL 192.168.1.0/24</code>    </p>
-<p>​            <strong>-sn</strong>    Ping扫描，侦测存活的主机，而不进行端口扫描，是目前十几种主机发现手段中最常用的：</p>
-<p>​            example：<code>nmap -sn 192.168.1.0/24</code></p>
-<p>​            <strong>-sP</strong>    Ping扫描，侦测存活的主机，而不进行端口扫描，与-sn相同，只是版本不同，执行效果一样：</p>
-<p>​            example：<code>nmap -sP 192.168.1.0/24</code>    </p>
-<p>​            <strong>-Pn</strong>    非Ping扫描，不执行Ping主机，常用于绕过防火墙：</p>
-<p>​            example：<code>    nmap -Pn 192.168.1.0/24</code></p>
-<p>​            <strong>-P0</strong>    非Ping扫描，不执行Ping主机，与-Pn类似，应该也是版本不同，执行效果一样：</p>
-<p>​            example：<code>    nmap -P0 192.168.1.0/24</code></p>
-<p>​    <strong>·    端口扫描：</strong></p>
-<p>​            <strong>-sS</strong>    TCP SYN扫描，又称为半开放扫描，它不打开一个完全的TCP连接，执行得很快，是使用频率最高的扫描选项；</p>
-<p>​            example：<code>nmap -sS 192.168.1.1</code></p>
-<p>​            <strong>-sT</strong>    TCP connect()扫描，完整三次握手，最基础最稳定的扫描方式，执行有点慢，当SYN扫描不能用时用该选项;</p>
-<p>​            example：<code>nmap -sT 192.168.1.1</code></p>
-<p>​            <strong>-sU</strong>   UDP扫描，发送空的(没有数据)UDP报头到每个目标端口，扫描速度非常慢:</p>
-<p>​            example：<code>        nmap -sU 192.168.1.1</code></p>
-<p>​            <strong>-sA</strong>    TCP ACK扫描</p>
-<p>​            example：<code>        nmap -sA 192.168.1.1</code></p>
-<p>​            <strong>-sF</strong>     TCP FIN扫描</p>
-<p>​            example：<code>        nmap -sF 192.168.1.1</code></p>
-<p>​            <strong>-sN</strong>    TCP Null扫描</p>
-<p>​            example：<code>        nmap -sN 192.168.1.1</code></p>
-<p>​            <strong>-sW</strong>    窗口扫描    </p>
-<p>​            <strong>-p</strong>      指定端口扫描，扫描指定的端口信息，也可以扫描范围；</p>
-<p>​            example：<code>        nmap -p 80,81,3306,3389 192.168.1.1</code></p>
-<p>​            example：<code>        nmap -p 0-100 192.168.1.1</code>    </p>
-<p>​    <strong>·    服务版本探测</strong></p>
-<p>​            <strong>-sV</strong>    服务版本探测，配合端口扫描使用；</p>
-<p>​            example：<code>        nmap -sV -p 0-100 192.168.1.1</code></p>
-<p>​    <strong>·    操作系统检测</strong></p>
-<p>​            <strong>-O</strong>     操作系统检扫描，配合端口扫描使用；</p>
-<p>​            example：<code>        nmap -sS -O 192.168.1.1</code></p>
-<p>​    <strong>·    脚本引擎应用</strong></p>
-<p>​            <strong>–script=<lua scripts></lua></strong></p>
-<p>​            –script=auth    绕过鉴权扫描，该命令会检测出 开放的端口，以及 免密登录的方式 </p>
-<p>​            –script=vuln     常见漏洞扫描</p>
-<p>​            –script=brute   可以对数据库、SMB、SNMP等进行简单的密码暴力猜解</p>
-<p>​    <strong>·    其他常用选项</strong>    </p>
-<p>​        -V       打印版本信息，也可以用长选项–version；</p>
-<p>​        -A       激烈扫描模式，目前是会同时开启服务版本探测-sV和操作系统检测-O；</p>
-<p>​        -h       打印大部分帮助信息，也可以用长选项–help；</p>
-<p>​        -v       提高输出信息的详细程度，也可以-vv，官方给出解释是会输出更详细；</p>
-<p>​        -e       指定网卡发送请求</p>
-<h2 id="·-Nmap常规使用方式"><a href="#·-Nmap常规使用方式" class="headerlink" title="·  Nmap常规使用方式"></a>·  Nmap常规使用方式</h2><p>​    nmap直接</p>
-<p>​     </p>
-<p>​    </p>
+                <p>SQL全称是Structured Query  Language，是一种结构化的查询语言，用于与数据库进行交互并能够被数据库解析。SQL注入攻击是一种常见的注入攻击类型。攻击方式在用户与程序进行交互时发生的。如在表单输入、搜索框输入功能中插入SQL命令，然后发送到服务端。服务端对数据进行了解析执行，并执行了一些非预期的操作。</p>
+<h2 id="·-SQL注入漏洞的危害"><a href="#·-SQL注入漏洞的危害" class="headerlink" title="· SQL注入漏洞的危害"></a>· SQL注入漏洞的危害</h2><p>​    <strong>· 获取webshell：</strong>当权限为root且知道绝对路径时，可以直接写一句话木马到服务器。</p>
+<p>​    <strong>· 获取系统权限：</strong>当权限足够高时，可以获取系统直接权限，即system权限。</p>
+<p>​    <strong>· 数据库信息泄露：</strong>泄露数据库中存放的数据，用户隐私等。</p>
+<p>​    <strong>· 网页篡改：</strong>注入出后台管理员用户，登陆后台后发布恶意数据、篡改后台数据等。</p>
+<p>​    <strong>· 网站挂马：</strong>当拿到WebShell或者获取到服务器的权限后，可将一些网页木马挂在服务器上，去攻击别人。</p>
+<p>​    <strong>· 万能密码：</strong>利用特定的Payload登录后台或者其他页面。</p>
+<p>​    <strong>· 文件读取：</strong>读取敏感文件。union select 1,2,hex(loadfile(‘D:\phpStudy\PHPTutorial\WWW\x.php’))–+</p>
+<p>​    <!--SQL注入漏洞被列为高危漏洞，常居十大漏洞榜首--></p>
+<h2 id="·-SQL注入条件"><a href="#·-SQL注入条件" class="headerlink" title="· SQL注入条件"></a>· SQL注入条件</h2><p>​    SQL注入漏洞的产生必须满足两个条件：</p>
+<p>​    <strong>存在注入位置：</strong>参数被拼接到SQL语句中并被带入到数据库进行查询。</p>
+<p>​    <strong>参数的可控性：</strong>前端传入后端的参数内容是用户可以控制的。</p>
+<h2 id="·-SQL注入类型"><a href="#·-SQL注入类型" class="headerlink" title="· SQL注入类型"></a>· SQL注入类型</h2><p>​    <strong>· 参数类型分类：</strong></p>
+<p>​        数字型注入：输入参数为整型时，例如id = 1 ，age = 1 等；</p>
+<p>​        字符型注入：输入参数为字符串型时，如name = ‘admin’、password = ‘qq456’ 等；</p>
+<p>​    <strong>· 注入位置分类：</strong></p>
+<p>​        GET注入：注入字符在URL参数中；</p>
+<p>​        POST注入：注入字段在POST提交的数据中；</p>
+<p>​        Cookie注入：注入字段在Cookie数据中;</p>
+<p>​        Referer注入：注入字段在Referer数据中;</p>
+<p>​        搜索注入：注入点在搜索框中，</p>
+<p>​                            可能是GET注入一般用在网站的搜索框，</p>
+<p>​                            也可能是POST注入一般用在用户名的登录框；</p>
+<p>​        其他注入：HTTP请求的其他内容触发的SQL注入漏洞；</p>
+<p>​        <!--网站使用通用的防注入程序，会对GET、POST提交的数据进行过滤，却往往遗漏Cookie与Referer中的数据进行过滤--></p>
+<p>​    <strong>· 结果反馈分类：</strong></p>
+<p>​        盲注：盲注不会展现任何报错内容，它是依据构造真或假的问题对数据库进行“提问”，注入方式主要有两种：</p>
+<p>​            布尔盲注：基于布尔值判断代入的SQL语句是否执行；</p>
+<p>​            时间盲注：基于延时函数是否执行从而判断代入的SQL语句是否执行；</p>
+<p>​        <!--盲注提交SQL命令较多，通常通过手工方式无法完成，借用工具如SQLMAP--></p>
+<p>​        非盲注：执行注入SQL语句将敏感信息展示出来，并进行进一步的操作。</p>
+<p>​            联合查询注入：使用union操作码合并两条或多条SQL语句；</p>
+<p>​            堆叠查询注入：同时执行多条语句；</p>
+<p>​            编码注入：将输入的字符串进行编码，如base64编码；</p>
+<p>​            多阶注入：由多个HTTP请求响应共同完成的注入；    </p>
+<h2 id="·-SQL注入手段"><a href="#·-SQL注入手段" class="headerlink" title="· SQL注入手段"></a>· SQL注入手段</h2><p>​    <strong>现在主流的网站架构有两种：</strong></p>
+<p>​    LAMP —-&gt;  Linux + Apach+ Mysql + Php</p>
+<p>​    LNMP —-&gt; Linux + Ngnix + Mysql + Php</p>
+<p>​    所以主要的注入方向还是Mysql数据库，当然也有用Mssql，DB2，Access等数据库的网站，由于比较小众，所以就从Mysql数据库的注入入手；</p>
+<p>​    <strong>Mysql数据库5.5.53内置四个库：</strong></p>
+<p>​    <strong>infomation_schema：</strong>主要负责管理访问数据库元数据的方式；</p>
+<p>​    <strong>performance_schema：</strong>主要用于收集数据库服务器性能参数；</p>
+<p>​    <strong>mysql：</strong>主要负责存储数据库的用户、权限设置、关键字等；</p>
+<p>​    <strong>test：</strong>示例库，没有任何数据；</p>
+<p>​    <strong>SQL注入主要要借助于infomation_schema库，infomation_schema库中有三个表最为关键：</strong></p>
+<p>​    <strong>schemata表</strong>：SCHEMA_NAME字段中存放着Mysql中的所有库名；</p>
+<p>​    <strong>tables表：</strong>TABLE_NAME和TABLE_SCHEMA分别存放着MySQL中的所有表名和对应的库名。</p>
+<p>​    <strong>columns表：</strong>COLUMN_NAME，TABLE_NAME和TABLE_SCHEMA分别存放着Mysql中的所有字段名和对应的表名，库名</p>
 <p>​    </p>
 
                 
@@ -572,7 +562,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gitman-yy.github.io/2021/02/06/shen-tou-ce-shi-gong-ju-zhi-nmap/">https://gitman-yy.github.io/2021/02/06/shen-tou-ce-shi-gong-ju-zhi-nmap/</a>
+                    <a href="https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-lou-dong-zhi-sql-zhu-ru/">https://gitman-yy.github.io/2021/02/04/shen-tou-ce-shi-lou-dong-zhi-sql-zhu-ru/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,16 +600,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">工具</span>
+                                <a href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">渗透测试</span>
                                 </a>
                             
-                                <a href="/tags/Nmap/">
-                                    <span class="chip bg-color">Nmap</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                                    <span class="chip bg-color">网络安全</span>
+                                <a href="/tags/%E6%BC%8F%E6%B4%9E/">
+                                    <span class="chip bg-color">漏洞</span>
                                 </a>
                             
                         </div>
@@ -795,13 +781,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/15/shen-tou-ce-shi-lou-dong-zhi-xss/">
+                <a href="/2021/02/04/shen-tou-ce-shi-liu-cheng-zhi-xin-xi-shou-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="渗透测试·漏洞之XSS">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="渗透测试之信息收集">
                         
-                        <span class="card-title">渗透测试·漏洞之XSS</span>
+                        <span class="card-title">渗透测试之信息收集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -812,7 +798,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
                         </span>
                         <span class="publish-author">
                             
@@ -821,6 +807,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
+                        <span class="chip bg-color">前渗透</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -832,13 +826,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/04/shen-tou-ce-shi-liu-cheng-zhi-xin-xi-shou-ji/">
+                <a href="/2021/02/04/nei-wang-shen-tou-zhi-liu-liang-zhuan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="渗透测试之信息收集">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="内网渗透之流量转发">
                         
-                        <span class="card-title">渗透测试之信息收集</span>
+                        <span class="card-title">内网渗透之流量转发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -862,8 +856,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E6%B8%97%E9%80%8F/">
-                        <span class="chip bg-color">前渗透</span>
+                    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">
+                        <span class="chip bg-color">内网渗透</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B5%81%E9%87%8F%E8%BD%AC%E5%8F%91/">
+                        <span class="chip bg-color">流量转发</span>
                     </a>
                     
                 </div>
